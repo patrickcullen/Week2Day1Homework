@@ -44,4 +44,9 @@ class TestLibraryDetails < MiniTest::Test
     @library.add_new_book("lord_of_the_irritants")
     assert_equal(["lord_of_the_rings", "lord_of_the_flies", "lord_of_the_rubies", "lord_of_the_irritants"], @library.find_books)
   end
+
+  def test_change_details
+    @library.change_details("lord_of_the_flies","Boris","20/04/18")
+    assert_equal(["Boris, 20/04/18"], @library.return_info("lord_of_the_flies"))
+  end
 end

@@ -10,9 +10,13 @@ class SportsTeam
     @team_points = team_points
   end
 
+  # Add player to team players array
+
   def add_player(new_player)
     @team_players.push(new_player)
   end
+
+  # Check if supplied name appears in players array
 
   def check_player(player_name)
     for player in @team_players
@@ -22,6 +26,8 @@ class SportsTeam
     end
     return false
   end
+
+  # Maintain points based on supplied result, "w" = 3, "d" = 1, "l" = 0
 
   def maintain_points(result)
     case result
@@ -33,23 +39,5 @@ class SportsTeam
       @team_points += 0
     end
   end
-
-  # def team_name()
-  #   return @team_name
-  # end
-  #
-  # def team_players()
-  #   return @team_players
-  # end
-  #
-  # def team_coach
-  #   return @team_coach
-  # end
-  #
-  # def set_coach_name(new_name)
-  #   @team_coach = new_name
-  # end
-
-
 
 end
